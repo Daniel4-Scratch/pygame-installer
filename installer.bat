@@ -2,9 +2,9 @@
 cls
 title Pygame Installer
 color 0a
-type resources\pygame
+type resources\pygame.acf
 echo pygame installer
-echo 0.0.1                 
+type resources\ver.acf
 echo.
 
 set arg1=%1
