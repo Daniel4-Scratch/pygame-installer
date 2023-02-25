@@ -75,9 +75,11 @@ exit
 
 :error
 echo no arguments given
-set /p TAB="Would you like to install or uninstall pygame? (in/un)>"
+set /p TAB="Would you like to install, uninstall, update or reinstall pygame? (in/un/up/re/help)>"
 if "%TAB%"=="in" goto install
 if "%TAB%"=="un" goto uninstall
-if NOT "%TAB%"=="in" goto no
+if "%TAB%"=="up" goto update
+if "%TAB%"=="re" goto reinstall
+if "%TAB%"=="help" goto help
 echo.
 pause
