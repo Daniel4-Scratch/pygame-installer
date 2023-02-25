@@ -15,6 +15,7 @@ if "%arg1%"=="uninstall" goto uninstall
 if "%arg1%"=="update" goto update
 if "%arg1%"=="reinstall" goto reinstall
 if "%arg1%"=="help" goto help
+if "%arg1%"=="acfreg" goto reg
 goto error
 
 :install
@@ -71,6 +72,12 @@ exit
 echo.
 echo Exiting...
 TIMEOUT /T 5
+exit
+
+:reg
+echo Executing...
+resources\acf.reg
+pause
 exit
 
 :error

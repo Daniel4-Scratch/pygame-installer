@@ -19,6 +19,8 @@ Pygame Installer is an easy way to install, uninstall, update or reinstall pygam
     - `installer.bat update` to update pygame.
     - `installer.bat reinstall` to reinstall pygame.
     - `installer.bat help` to get help.
+    - `installer.bat version` to get the version of the installer.
+    - `installer.bat acfreg` to add an icon to the `.acf` files. (application configuration files)
 4. Enjoy!
 ___
 ##### By Daniel4-Scratch
