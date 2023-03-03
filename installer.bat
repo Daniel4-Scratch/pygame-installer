@@ -4,8 +4,9 @@ title Pygame Installer
 color 0a
 type resources\pygame.acf
 echo pygame installer
-type resources\ver.acf
+echo 0.0.3
 echo.
+
 
 set arg1=%1
 shift
@@ -41,46 +42,45 @@ if NOT "%TAB%"=="y" goto no
 
 :help
 README.md
-exit
+goto exit
 
 :yesin
 echo Executing pip command...
 pip install pygame
 pause
-exit
+goto exit
 
 :yesun
 echo Executing pip command...
 pip uninstall pygame
 pause
-exit
+goto exit
 
 :yesup
 echo Executing pip command...
 pip install pygame --upgrade
 pause
-exit
+goto exit
 
 :yesre
 echo Executing pip command...
 pip install --force-reinstall --no-cache-dir pygame
 pause
-exit
+goto exit
 
 
 :no
 echo.
-echo Exiting...
-TIMEOUT /T 5
-exit
+goto exit
 
 :reg
 echo Executing...
 resources\acf.reg
 pause
-exit
+goto exit
 
 :error
+
 echo no arguments given
 set /p TAB="Would you like to install, uninstall, update or reinstall pygame? (in/un/up/re/help)>"
 if "%TAB%"=="in" goto install
@@ -89,4 +89,13 @@ if "%TAB%"=="up" goto update
 if "%TAB%"=="re" goto reinstall
 if "%TAB%"=="help" goto help
 echo.
-pause
+goto exit
+
+:exit
+echo.
+echo checking for updates before exit...
+python resources/updater.py
+echo.
+echo Press any key to exit...
+pause >nul
+exit
