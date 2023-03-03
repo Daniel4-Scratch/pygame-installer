@@ -4,7 +4,7 @@ title Pygame Installer
 color 0a
 type resources\pygame.acf
 echo pygame installer
-echo 0.0.3
+echo 0.0.4
 echo.
 
 
@@ -82,6 +82,7 @@ goto exit
 :error
 
 echo no arguments given
+
 set /p TAB="Would you like to install, uninstall, update or reinstall pygame? (in/un/up/re/help)>"
 if "%TAB%"=="in" goto install
 if "%TAB%"=="un" goto uninstall
